@@ -1,4 +1,4 @@
-const express = require('express')
+const express = require('express');
 
 const { connection } = require('../database/config')
 const { User } = require('../routes')
@@ -9,18 +9,22 @@ class Server {
         this.port = process.env.PORT;
         this.users = '/api/users';
         this.database();
-        this.router();
-
+        this.middlewares();
+        this.routes();
     }
 
     async database() {
         await connection();
     }
 
-    router(){
-        this.app.use(this.users, User)
+    middlewares() {
+        this.app.use(express.json());
     }
-    
+
+    routes() {
+        this.app.use(this.users, User);
+    }
+
     create() {
         this.app.listen(this.port, () => {
             console.log("App running on port: " + this.port);
