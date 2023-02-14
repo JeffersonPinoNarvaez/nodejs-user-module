@@ -1,14 +1,20 @@
 const express = require('express')
 
+const { connection } = require('../database/config')
+
 class Server {
     constructor() {
         this.app = express();
         this.port = process.env.PORT;
+        this.database();
 
     }
-    create () {
+    async database() {
+        await connection();
+    }
+    create() {
         this.app.listen(this.port, () => {
-            console.log("Running on port: " + this.port);
+            console.log("App running on port: " + this.port);
         });
     }
 }
