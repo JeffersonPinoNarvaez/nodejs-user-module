@@ -1,0 +1,25 @@
+{
+  "name": "com.user-module.services",
+  "version": "1.0.0",
+  "description": "this package contains the services needed for a user module which are: Login, User CRUD, email notifications and restore password.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JeffersonPinoNarvaez/nodejs.git"
+  },
+  "author": "ElJeff",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JeffersonPinoNarvaez/nodejs/issues"
+  },
+  "homepage": "https://github.com/JeffersonPinoNarvaez/nodejs#readme",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "nodemon": "^2.0.20"
+  }
+}
